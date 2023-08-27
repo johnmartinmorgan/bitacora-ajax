@@ -16,33 +16,20 @@ require 'pdo.php';
 			<h1>Bitácora AJAX</h1>
 			<div class="col-sm-12 col-md-6">
 				<div class="list-group">
+					<?php
+					$stmt = $pdo -> prepare("SELECT * FROM bitacora");
+					$stmt -> execute();
+					while ($row = $stmt -> fetch()) : ?>
 					<a href="#" class="list-group-item list-group-item-action d-flex">
-						<div class="d-flex gap-2 w-100 justify-content-between">
+						<div class="d-flex gap-2 py-1 w-100 justify-content-between">
 							<div>
-								<small class="opacity-50">1w</small>
-								<h6 class="mb-0">List group item heading</h6>
-								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+								<small class="opacity-50"><?php echo $row['fecha'] ?></small>
+								<h6 class="mb-0"><?php echo $row['titulo'] ?></h6>
+								<p class="mb-0 opacity-75"><?php echo $row['texto'] ?></p>
 							</div>
 						</div>
 					</a>
-					<a href="#" class="list-group-item list-group-item-action d-flex">
-						<div class="d-flex gap-2 w-100 justify-content-between">
-							<div>
-								<small class="opacity-50">1w</small>
-								<h6 class="mb-0">List group item heading</h6>
-								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="list-group-item list-group-item-action d-flex">
-						<div class="d-flex gap-2 w-100 justify-content-between">
-							<div>
-								<small class="opacity-50">1w</small>
-								<h6 class="mb-0">List group item heading</h6>
-								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-							</div>
-						</div>
-					</a>
+					<?php endwhile; ?>
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-6">
