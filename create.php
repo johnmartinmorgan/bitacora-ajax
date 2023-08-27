@@ -3,7 +3,7 @@ require 'pdo.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$titulo = strip_tags($_POST['titulo']);
 	$texto = strip_tags($_POST['texto']);
-	$fecha = date("j-m-Y / H:i");
+	$fecha = date("j-m-Y - H:i");
 	$stmt = $pdo -> prepare("	INSERT INTO bitacora (titulo, texto, fecha) 
 								VALUES (:titulo, :texto, :fecha)");
 	$stmt -> execute([

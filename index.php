@@ -17,10 +17,10 @@ require 'pdo.php';
 			<div class="col-sm-12 col-md-6">
 				<div class="list-group">
 					<?php
-					$stmt = $pdo -> prepare("SELECT * FROM bitacora");
+					$stmt = $pdo -> prepare("SELECT * FROM bitacora ORDER BY id DESC LIMIT 20");
 					$stmt -> execute();
 					while ($row = $stmt -> fetch()) : ?>
-					<a href="#" class="list-group-item list-group-item-action d-flex">
+					<a href="delete.php?id=<?php echo $row['id'] ?>" class="list-group-item list-group-item-action d-flex">
 						<div class="d-flex gap-2 py-1 w-100 justify-content-between">
 							<div>
 								<small class="opacity-50"><?php echo $row['fecha'] ?></small>
