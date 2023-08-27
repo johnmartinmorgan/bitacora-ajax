@@ -5,3 +5,12 @@
 div.container {
 	padding-top: 30px;
 }
+
+h1 {
+	font-size: x-large;
+	padding-bottom: 15px;
+}
+
+div.position-sticky {
+	top: 2rem;
+}

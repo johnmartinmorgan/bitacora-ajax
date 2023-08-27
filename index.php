@@ -1,4 +1,4 @@
-<?php
+<?php date_default_timezone_set("America/Argentina/Buenos_Aires");
 require 'pdo.php';
 ?>
 <!DOCTYPE html>
@@ -13,66 +13,76 @@ require 'pdo.php';
 <body>
 	<div class="container">
 		<div class="row">
+			<h1>Bitácora AJAX</h1>
 			<div class="col-sm-12 col-md-6">
-				<div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
-					<div class="list-group">
-						<a href="#" class="list-group-item list-group-item-action d-flex">
-							<div class="d-flex gap-2 w-100 justify-content-between">
-								<div>
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action d-flex">
+						<div class="d-flex gap-2 w-100 justify-content-between">
+							<div>
 								<small class="opacity-50">1w</small>
-									<h6 class="mb-0">List group item heading</h6>
-									<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-								</div>
+								<h6 class="mb-0">List group item heading</h6>
+								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
 							</div>
-						</a>
-						<a href="#" class="list-group-item list-group-item-action d-flex">
-							<div class="d-flex gap-2 w-100 justify-content-between">
-								<div>
+						</div>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action d-flex">
+						<div class="d-flex gap-2 w-100 justify-content-between">
+							<div>
 								<small class="opacity-50">1w</small>
-									<h6 class="mb-0">List group item heading</h6>
-									<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-								</div>
+								<h6 class="mb-0">List group item heading</h6>
+								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
 							</div>
-						</a>
-						<a href="#" class="list-group-item list-group-item-action d-flex">
-							<div class="d-flex gap-2 w-100 justify-content-between">
-								<div>
+						</div>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action d-flex">
+						<div class="d-flex gap-2 w-100 justify-content-between">
+							<div>
 								<small class="opacity-50">1w</small>
-									<h6 class="mb-0">List group item heading</h6>
-									<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-								</div>
+								<h6 class="mb-0">List group item heading</h6>
+								<p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
 							</div>
-						</a>
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<form 
-					action="create.php" 
-					method="POST">
-					<div class="mb-3">
-						<label for="formGroupExampleInput" class="form-label">Example label</label>
-						<input 
-							name="" 
-							type="text" 
-							class="form-control" 
-							placeholder="Example input placeholder">
-					</div>
-					<div class="mb-3">
-						<label for="formGroupExampleInput2" class="form-label">Another label</label>
-						<input 
-							name="" 
-							type="text" 
-							class="form-control" 
-							placeholder="Example input placeholder">
-					</div>
-					<div class="mb-3">
-						<input 
-							type="submit"
-							class="btn btn-dark" 
-							value="Agregar">
-					</div>
-				</form>
+				<div class="position-sticky">
+					<form 
+						class="needs-validation" 
+						action="create.php" 
+						method="POST"
+						novalidate>
+						<div class="mb-3">
+							<label for="titulo" class="form-label">Título</label>
+							<input 
+								name="titulo" 
+								type="text" 
+								class="form-control" 
+								required>
+							<div class="invalid-feedback">
+								Debe tener un título.
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="texto" class="form-label">Texto</label>
+							<textarea 
+								name="texto" 
+								type="text" 
+								class="form-control"
+								rows="8" 
+								required></textarea>
+							<div class="invalid-feedback">
+								Debe contener texto.
+							</div>
+						</div>
+						<div class="mb-3">
+							<input 
+								type="submit"
+								class="btn btn-dark" 
+								value="Agregar">
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
